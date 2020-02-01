@@ -34,15 +34,26 @@ public class ProductoController {
 	}
 
 	@GetMapping("/ver/{id}")
-	public Producto detalle(@PathVariable Long id) throws Exception {
+	public Producto detalle(@PathVariable Long id){
 		Producto producto = productoService.findById(id);
 //		producto.setPort(Integer.parseInt(env.getProperty("local.server.port")));
 		producto.setPort(port);
+		
+//		Forzamosuna excepcion con un booleano
 		
 //		boolean ok = false;
 //		if(ok == false) {
 //			throw new Exception("No se pudo cargar el producto");
 //		}
+		
+//		Forzamos timeout
+//		try {
+//			Thread.sleep(2000L);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		 
 		return producto;
 	}
 }
